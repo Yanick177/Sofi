@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta para Sofi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce4ec;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .envelope {
+            width: 200px;
+            height: 130px;
+            background-color: #f48fb1;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f06292;
+            clip-path: polygon(50% 0%, 100% 50%, 0% 50%);
+        }
+
+        .envelope:hover {
+            transform: scale(1.05);
+        }
+
+        .hearts {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            color: white;
+        }
+
+        .message {
+            display: none;
+            font-size: 18px;
+            color: #880e4f;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        .open-text {
+            font-size: 16px;
+            color: #d81b60;
+            margin-top: 10px;
+            font-family: 'Brush Script MT', cursive;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="envelope" onclick="openLetter()">
+            <div class="hearts">💖💌💖</div>
+        </div>
+        <div class="open-text">Abrir en el momento adecuado</div>
+
+        <div id="message" class="message">
+            <p>Sofi,</p>
+            <p>Sé que no siempre he sido la mejor pareja, pero te prometo que voy a cambiar. Quiero demostrarte cada día que quiero estar a tu lado, pase lo que pase. A veces me equivoco, y lo que más me asusta es saber que probablemente seguiré cometiendo errores. Pero lo que más me duele es pensar en perderte.</p>
+            <p>Te amo tanto, tanto. Amo tus labios, ese pequeño cráter tan lindo que se forma en tu cara cuando sonríes. Amo tu risa, tus chistes malos, y todas esas conversaciones llenas de curiosidades que sacas de la nada. Admiro cómo te inspiras a seguir adelante, siempre avanzando.</p>
+            <p>Voy a esforzarme por cambiar, por ser mejor para ti. Haré todo lo que esté en mis manos para que me perdones. No quiero seguir lastimándote. Me arrepiento de mis errores y te prometo que no solo cambiaré ahora, sino cada vez que me equivoque, porque lo que más deseo es cuidar de ti.</p>
+            <p>Te amo mi cosa y siempre será así.</p>
+            <p>Te quiere coso, bomu.</p>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.querySelector('.envelope').style.display = 'none';
+            document.querySelector('.open-text').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
